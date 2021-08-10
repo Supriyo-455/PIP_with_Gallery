@@ -3,6 +3,7 @@ package com.example.excellentvideochattingapp.fragment
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.excellentvideochattingapp.R
 import com.example.excellentvideochattingapp.adapter.GalleryImageAdapter
@@ -48,5 +49,16 @@ class ImagegalleryFragment : Fragment(R.layout.image_gallery), GalleryImageClick
 
     override fun onClick(position: Int) {
         // handle click of image
+        var bundle: Bundle = Bundle()
+        bundle.putSerializable("images", imageList)
+        bundle.putInt("position", position)
+
+        val fragmentTransaction = fragmentManager?.beginTransaction()
+        val galleryFragment = GalleryFullscreenFragment()
+        galleryFragment.arguments = bundle
+        if (fragmentTransaction != null) {
+            galleryFragment.show(fragmentTransaction, "gallery")
+        }
+
     }
 }
