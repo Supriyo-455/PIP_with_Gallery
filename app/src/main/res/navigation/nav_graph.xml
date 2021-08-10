@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.excellentvideochattingapp.fragment.WelcomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_welcome"/>
+    <fragment
+        android:id="@+id/imagegalleryFragment"
+        android:name="com.example.excellentvideochattingapp.fragment.ImagegalleryFragment"
+        android:label="Image Gallery"
+        tools:layout="@layout/image_gallery" />
+    <fragment
+        android:id="@+id/documentsPageFragment"
+        android:name="com.example.excellentvideochattingapp.fragment.DocumentsPageFragment"
+        android:label="Documents"
+        tools:layout="@layout/docments_fragment" />
+</navigation>
