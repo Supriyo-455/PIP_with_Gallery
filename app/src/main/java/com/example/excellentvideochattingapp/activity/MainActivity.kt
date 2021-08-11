@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toolbar
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
@@ -29,6 +31,14 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController)
 
         bottom_nav.setupWithNavController(navController)
+
+        navController.addOnDestinationChangedListener{_,destination, _ ->
+            if(destination.id == R.id.cameraFragment){
+                bottom_nav.visibility = View.GONE
+            }else{
+                bottom_nav.visibility = View.VISIBLE
+            }
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

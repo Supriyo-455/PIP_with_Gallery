@@ -8,7 +8,15 @@
         android:id="@+id/welcomeFragment"
         android:name="com.example.excellentvideochattingapp.fragment.WelcomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_welcome"/>
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_welcomeFragment_to_cameraFragment"
+            app:destination="@id/cameraFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
     <fragment
         android:id="@+id/imagegalleryFragment"
         android:name="com.example.excellentvideochattingapp.fragment.ImagegalleryFragment"
@@ -19,4 +27,9 @@
         android:name="com.example.excellentvideochattingapp.fragment.DocumentsPageFragment"
         android:label="Documents"
         tools:layout="@layout/docments_fragment" />
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.example.excellentvideochattingapp.fragment.CameraFragment"
+        android:label="camera"
+        tools:layout="@layout/fragment_camera" />
 </navigation>
